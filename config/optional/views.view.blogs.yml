@@ -1,3 +1,4 @@
+uuid: bca17979-0446-4d55-a9c2-d08c03381c26
 langcode: de
 status: true
 dependencies:
@@ -579,7 +580,7 @@ display:
           type: select
           limit: true
           vid: themen
-          hierarchy: false
+          hierarchy: true
           error_message: true
           plugin_id: taxonomy_index_tid
       sorts:
