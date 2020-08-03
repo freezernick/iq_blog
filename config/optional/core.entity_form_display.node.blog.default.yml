@@ -1,0 +1,103 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.body
+    - field.field.node.blog.field_image
+    - field.field.node.blog.field_lead
+    - field.field.node.blog.field_pagedesigner_content
+    - field.field.node.blog.field_topics
+    - node.type.blog
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - pagedesigner_yoast
+    - path
+    - term_reference_tree
+    - text
+id: node.blog.default
+targetEntityType: node
+bundle: blog
+mode: default
+content:
+  body:
+    type: pagedesigner_yoast_seo_body_widget
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 4
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: iqbm_image_browser
+    type: inline_entity_form_complex
+    region: content
+  field_lead:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_topics:
+    weight: 5
+    settings:
+      start_minimized: true
+      select_parents: true
+      cascading_selection: 3
+      max_depth: 0
+      leaves_only: false
+    third_party_settings: {  }
+    type: term_reference_tree
+    region: content
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_pagedesigner_content: true
+  langcode: true
+  promote: true
+  status: true
+  uid: true

@@ -1,0 +1,7 @@
+name: iQual Blog
+description: Provides Blog content type for iQual
+package: Custom
+type: module
+core: 8.x
+dependencies:
+  - pagedesigner_block_adaptable:pagedesigner_block_adaptable

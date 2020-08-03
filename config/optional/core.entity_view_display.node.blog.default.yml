@@ -1,0 +1,32 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.body
+    - field.field.node.blog.field_image
+    - field.field.node.blog.field_lead
+    - field.field.node.blog.field_pagedesigner_content
+    - field.field.node.blog.field_topics
+    - node.type.blog
+  module:
+    - pagedesigner
+    - user
+id: node.blog.default
+targetEntityType: node
+bundle: blog
+mode: default
+content:
+  field_pagedesigner_content:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: pagedesigner_formatter
+    region: content
+hidden:
+  body: true
+  field_image: true
+  field_lead: true
+  field_topics: true
+  langcode: true
+  links: true
