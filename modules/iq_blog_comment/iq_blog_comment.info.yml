@@ -1,0 +1,11 @@
+name: iqual blog - comment
+description: comment extension for iq_blog module
+package: Custom
+type: module
+core: 8.x
+dependencies:
+  - iq_blog:iq_blog
+  - drupal:comment
+
+'interface translation project': iq_blog_comment
+'interface translation server pattern': modules/custom/iq_blog/modules/iq_blog_comment/translations/iq_blog_comment-%language.po

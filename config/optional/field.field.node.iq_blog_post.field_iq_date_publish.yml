@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_iq_date_publish
+    - node.type.iq_blog_post
+  module:
+    - datetime
+id: node.iq_blog_post.field_iq_date_publish
+field_name: field_iq_date_publish
+entity_type: node
+bundle: iq_blog_post
+label: 'Publish date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

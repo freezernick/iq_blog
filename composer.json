@@ -1,6 +1,6 @@
 {
   "name": "iqual/iq_blog",
-  "description": "Provides Blog content type for iQual",
+  "description": "Blog base module for iqual.",
   "type": "drupal-custom-module",
   "repositories": [
     {
@@ -9,6 +9,8 @@
     }
   ],
   "require": {
-    "iqual/pagedesigner_block_adaptable": "*"
+    "iqual/pagedesigner_block_adaptable": "*",
+    "drupal/iq_entity_browsers": "*",
+    "drupal/like_dislike": "*"
   }
 }

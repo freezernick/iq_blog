@@ -1,0 +1,11 @@
+name: iqual blog - like/dislike
+description: like/dislike extension for iq_blog module
+package: Custom
+type: module
+core: 8.x
+dependencies:
+  - iq_blog:iq_blog
+  - like_dislike:like_dislike
+
+'interface translation project': iq_blog_like_dislike
+'interface translation server pattern': modules/custom/iq_blog/modules/iq_blog_like_dislike/translations/iq_blog_like_dislike-%language.po

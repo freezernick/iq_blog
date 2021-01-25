@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Contains iq_blog_comment.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function iq_blog_comment_preprocess_node__iq_blog_post(&$variables) {
+  $variables['#attached']['library'][] = 'iq_blog_comment/blog-post-comment';
+}

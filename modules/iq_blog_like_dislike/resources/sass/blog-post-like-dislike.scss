@@ -1,0 +1,66 @@
+@import 'definitions';
+
+.node--type-iq-blog-post {
+  .field--type-like-dislike {
+    max-width: 1110px;
+    margin: auto;
+    padding: 45px 0;
+
+    .like_dislike{
+      display: flex;
+      .like,
+      .dislike{
+        border: none;
+        border-radius: 0;
+        float: none;
+        margin: 0 30px 0 0;
+        padding: 0;
+        width: auto;
+        color: $color-primary;
+        a{
+          border: none;
+          float: none;
+          padding: 0;
+          color: inherit;
+          text-decoration: none;
+          &::before{
+            color: inherit;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+            margin-right: 5px;
+          }
+        }
+
+        > span{
+          font-size: $font-size-small;
+          float: none;
+          padding: 0;
+          color: inherit;
+          &:not(:empty):before{
+            content: "(";
+          }
+          &:not(:empty):after{
+            content: ")";
+          }
+        }
+      }
+      .like{
+        a::before{
+          content: "\f164";
+        }
+      }
+      .dislike{
+        a::before{
+          content: "\f165";
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: iq_blog_post_comment
+label: 'Kommentar Blog Artikel'
+target_entity_type_id: node
+description: ''

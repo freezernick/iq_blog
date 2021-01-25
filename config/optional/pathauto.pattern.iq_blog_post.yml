@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: iq_blog_post
+label: 'Blog Post'
+type: 'canonical_entities:node'
+pattern: '/blog/[node:title]'
+selection_criteria:
+  449c2f13-1e82-489b-b3c5-fbca0dee867a:
+    id: node_type
+    bundles:
+      iq_blog_post: iq_blog_post
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 449c2f13-1e82-489b-b3c5-fbca0dee867a
+selection_logic: and
+weight: -5
+relationships: {  }

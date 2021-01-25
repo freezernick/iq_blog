@@ -1,0 +1,25 @@
+uuid: 9d3e6842-3e48-4669-89c6-f4f1eaf48da5
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_iq_like_dislike
+    - node.type.iq_blog_post
+  module:
+    - like_dislike
+id: node.iq_blog_post.field_iq_like_dislike
+field_name: field_iq_like_dislike
+entity_type: node
+bundle: iq_blog_post
+label: Likes
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    likes: '0'
+    dislikes: '0'
+    clicked_by: null
+default_value_callback: ''
+settings: {  }
+field_type: like_dislike

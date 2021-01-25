@@ -1,0 +1,274 @@
+@import 'definitions';
+
+.node--type-iq-blog-post {
+  .field--type-comment {
+    max-width: 1110px;
+    margin: auto;
+    padding: 45px 0;
+
+    .comment-form {
+
+      >.col-auto {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .form-group {
+        padding: 0;
+      }
+
+      .webform-flexbox {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      details {
+        margin-bottom: 15px;
+
+        .details-wrapper {
+          margin-top: 15px;
+        }
+      }
+
+      fieldset {
+        margin-bottom: 15px;
+        padding: 0;
+
+        &.form-type-textarea {
+          margin-bottom: 15px;
+        }
+
+        >label,
+        >legend {
+          font-size: inherit;
+          margin-bottom: 0;
+        }
+
+        input,
+        select,
+        textarea {
+          border-radius: $border-radius-base;
+          border: $border-width-base solid $border-color-base;
+          margin-top: 0rem;
+        }
+
+        .form-control:focus {
+          border-color: $color-primary;
+        }
+
+        .js-webform-checkboxes,
+        .js-webform-radios {
+          .js-form-item {
+            margin-bottom: 5px;
+
+            label {
+              margin-bottom: 0;
+            }
+
+            input {
+              margin-top: 5px;
+            }
+
+            .description {
+              .col-auto {
+                padding-left: 1.25rem;
+              }
+            }
+          }
+        }
+
+        .js-webform-webform-buttons {
+          label {
+            border-radius: 0;
+            text-decoration: none;
+            color: $color-standard;
+            margin-right: -1px;
+            background-color: transparent;
+
+            &:hover,
+            &:focus,
+            &:active {
+              box-shadow: none;
+              outline: none;
+              color: $color-link-hover;
+              background-color: rgba(0, 0, 0, 0.063);
+              border-color: rgba(0, 0, 0, 0.063);
+            }
+
+            &.ui-state-active {
+              color: $font-color-buttons;
+              background-color: $background-color-buttons;
+              border-color: $background-color-buttons;
+              box-shadow: none;
+              outline: none;
+            }
+          }
+        }
+
+        &.form-item-file-upload {
+          .description {
+            .col-auto {
+              margin-top: 5px;
+              padding: 0;
+            }
+          }
+
+          [name="file_upload_remove_button"] {
+            width: auto;
+            padding: 0 10px;
+            font-weight: normal;
+            color: $color-link-hover;
+            background-color: rgba(0, 0, 0, 0.063);
+          }
+        }
+
+        &.form-type-webform-multiple {
+          .webform-multiple-table {
+            .tabledrag-toggle-weight-wrapper {
+              display: none;
+            }
+
+            table {
+              margin: 0;
+
+              thead {
+                display: none;
+              }
+
+              tbody {
+                tr {
+                  background: none;
+                  border: none;
+
+                  td {
+                    padding: 0 0 15px 0;
+                    border: none;
+
+                    &.webform-multiple-table--handle,
+                    &.webform-multiple-table--weight {
+                      display: none;
+                    }
+
+                    &.webform-multiple-table--operations-two {
+                      position: relative;
+
+                      input[type="image"] {
+                        position: absolute;
+                        top: 10px;
+                        right: 30px;
+
+                        +input[type="image"] {
+                          right: 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .webform-multiple-add {
+            display: none;
+          }
+        }
+
+
+      }
+
+      .form-type-webform-terms-of-service {
+        margin-bottom: 15px;
+      }
+
+
+
+
+      .webform-progress {
+        .progress-step {
+
+          .progress-text {
+            color: $color-grey1;
+          }
+
+          &.is-active {
+            .progress-marker {
+              background-color: $color-primary;
+            }
+          }
+
+          &.is-complete:hover {
+            .progress-marker {
+              background-color: $color-primary;
+            }
+          }
+
+          .progress-title[role="link"] {
+            color: $color-grey1;
+
+            &:hover {
+              color: $color-primary;
+            }
+          }
+
+
+
+
+
+
+        }
+
+
+
+      }
+
+
+      .form-actions {
+
+        position: relative;
+
+
+        @media only screen and (min-width: 768px) {
+          display: flex;
+          justify-content: space-between
+        }
+
+
+        .ajax-progress-throbber {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          filter: grayscale(1);
+          left: 100%;
+        }
+
+        .btn-primary {
+          margin: 0;
+
+          @media only screen and (min-width: 768px) {
+            flex-basis: 45%;
+          }
+
+          &.disabled,
+          &:disabled {
+            color: $color-grey5;
+            background-color: $color-grey3;
+            border-color: $color-grey3;
+          }
+        }
+      }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+  }
+}

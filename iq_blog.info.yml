@@ -1,7 +1,11 @@
-name: iQual Blog
-description: Provides Blog content type for iQual
+name: iqual blog
+description: Base blog system for iqual
 package: Custom
 type: module
 core: 8.x
 dependencies:
   - pagedesigner_block_adaptable:pagedesigner_block_adaptable
+  - iq_entity_browsers:iq_entity_browsers
+  - ui_patterns:ui_patterns_views
+'interface translation project': iq_blog
+'interface translation server pattern': modules/custom/iq_blog/translations/iq_blog-%language.po

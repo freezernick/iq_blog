@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.iq_blog_post_comment.default
+    - field.field.node.iq_blog_post.body
+    - field.field.node.iq_blog_post.field_iq_blog_comment
+    - field.field.node.iq_blog_post.field_iq_date_edited
+    - field.field.node.iq_blog_post.field_iq_date_publish
+    - field.field.node.iq_blog_post.field_iq_highlight
+    - field.field.node.iq_blog_post.field_iq_image
+    - field.field.node.iq_blog_post.field_iq_lead
+    - field.field.node.iq_blog_post.field_iq_reading_duration
+    - field.field.node.iq_blog_post.field_iq_topics
+    - field.field.node.iq_blog_post.field_meta_tags
+    - field.field.node.iq_blog_post.field_pagedesigner_content
+    - field.field.node.iq_blog_post.field_yoast_seo
+    - node.type.iq_blog_post
+  module:
+    - comment
+    - pagedesigner
+    - user
+id: node.iq_blog_post.default
+targetEntityType: node
+bundle: iq_blog_post
+mode: default
+content:
+  field_iq_blog_comment:
+    type: comment_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+  field_pagedesigner_content:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: pagedesigner_formatter
+    region: content
+hidden:
+  body: true
+  field_iq_date_edited: true
+  field_iq_date_publish: true
+  field_iq_highlight: true
+  field_iq_image: true
+  field_iq_lead: true
+  field_iq_reading_duration: true
+  field_iq_topics: true
+  field_meta_tags: true
+  field_yoast_seo: true
+  langcode: true
+  links: true

@@ -1,0 +1,91 @@
+@import 'definitions';
+
+.container-fluid .iq-row.blog-header{
+  padding: 0;
+  height: 75vw;
+  margin-bottom: -25vw;
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    height: 600px;
+    margin-bottom: -300px;
+  }
+
+  .iq-image{
+    height: 100%;
+  }
+}
+
+.container-fluid .iq-row.blog-intro{
+  background-color: $color-white;
+  position: relative;
+  padding: 15px 0;
+  max-width: 1260px;
+
+  @media screen and (min-width: 768px) {
+    padding: 45px;
+  }
+
+  .pre-title{
+    margin: 0;
+  }
+
+  h1{
+    margin-top: 0;
+  }
+
+  .info-holder{
+    margin-bottom: 15px;
+    &.publication-holder,
+    &.reading-duration-holder,
+    &.likes-holder{
+      @media screen and (max-width: 575px) {
+        max-width: none;
+        flex: 1;
+      }
+    }
+    .info-item{
+      &.author{
+        display: flex;
+        .iq-image{
+          width: 50px;
+          height: 50px;
+          overflow: hidden;
+          border-radius: 50%;
+          margin-right: 15px;
+          img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .title{
+        white-space: nowrap;
+        font-size: $font-size-lead;
+        line-height: $line-height-lead;
+        font-weight: $font-weight-lead;
+        font-style: $font-style-lead;
+        font-family: $font-family-lead;
+        color: $color-lead;
+        margin: 0;
+        @include fluid-type(320px, 991px, $font-size-min-lead, $font-size-lead);
+
+        @media screen and (max-width: 767px) {
+          font-size: 80%;
+        }
+      }
+      .sub-title{
+        margin: 0;
+        white-space: nowrap;
+        @media screen and (max-width: 767px) {
+          font-size: 80%;
+        }
+      }
+    }
+  }
+
+  .blog-lead{
+    padding-top: 60px;
+  }
+}

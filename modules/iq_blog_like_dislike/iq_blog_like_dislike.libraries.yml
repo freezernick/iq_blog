@@ -1,0 +1,4 @@
+blog-post-like-dislike:
+  css:
+    theme:
+      resources/css/blog-post-like-dislike.css: {}

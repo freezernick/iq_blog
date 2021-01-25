@@ -1,0 +1,4 @@
+blog-post:
+  css:
+    theme:
+      resources/css/blog-post.css: {}

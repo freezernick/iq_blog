@@ -1,0 +1,4 @@
+blog-post-comment:
+  css:
+    theme:
+      resources/css/blog-post-comment.css: {}

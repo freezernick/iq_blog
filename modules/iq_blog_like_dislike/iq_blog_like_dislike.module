@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains iq_blog_like_dislike.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function iq_blog_like_dislike_preprocess_node__iq_blog_post(&$variables) {
+  $variables['#attached']['library'][] = 'iq_blog_like_dislike/blog-post-like-dislike';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function iq_blog_like_dislike_theme() {
+  return [
+    'like' => [
+      'variables' => [
+        'likes' => NULL,
+        'like_url' => NULL,
+        'entity_id' => NULL,
+      ],
+    ],
+  ];
+}
