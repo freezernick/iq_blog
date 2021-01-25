@@ -154,12 +154,13 @@
         {% endif %}
       </div>
 
+      {{ node.field_pagedesigner_content|view({label: 'hidden', type: 'pagedesigner_formatter', settings: {}}) }}
+
       <div class="row iq-row blog-content">
         <div class="col-xs-12 col-md-12 iq-column">
           {{ content }}
         </div>
       </div>
-
 
     </section>
   </main>

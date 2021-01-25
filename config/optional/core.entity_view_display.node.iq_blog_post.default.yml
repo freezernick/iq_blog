@@ -43,15 +43,9 @@ content:
     third_party_settings: {  }
     type: like_dislike_formatter
     region: content
-  field_pagedesigner_content:
-    weight: 0
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: pagedesigner_formatter
-    region: content
 hidden:
   body: true
+  field_pagedesigner_content: true
   field_iq_date_edited: true
   field_iq_date_publish: true
   field_iq_highlight: true
