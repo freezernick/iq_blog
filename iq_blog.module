@@ -11,7 +11,7 @@
 function iq_blog_theme($existing, $type, $theme, $path) {
   return [
     'node__iq_blog_post' => [
-      'base hook' => 'node'
+      'base hook' => 'node',
     ],
   ];
 }
