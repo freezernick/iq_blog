@@ -105,11 +105,13 @@
         </div>
         <div class="col-xs-12 col-sm-4 iq-column info-holder author-holder">
           <div class="info-item author">
+            {% if node.uid.0.entity.field_iq_profile_picture.0.entity.field_media_image.entity.uri.value %}
             {{ pattern('img', {
               image_img: file_url(node.uid.0.entity.field_iq_profile_picture.0.entity.field_media_image.entity.uri.value),
               image_title: node.uid.0.entity.name.value,
               image_alt: node.uid.0.entity.name.value,
             }) }}
+            {% endif %}
             <div>
               <p class="title">{{ node.uid.0.entity.name.value }}</p>
               <p class="sub-title">{{ node.uid.0.entity.field_iq_function.value }}</p>
@@ -140,7 +142,6 @@
           </div>
         </div>
         {% endif %}
-
 
         <div class="col-xs-12 col-md-12 iq-column"></div>
 
