@@ -4,7 +4,7 @@ package: Custom
 type: module
 core: 8.x
 dependencies:
-  - drupal/datetime
+  - drupal:datetime
   - pagedesigner_block_adaptable:pagedesigner_block_adaptable
   - iq_entity_browsers:iq_entity_browsers
   - ui_patterns:ui_patterns_views
