@@ -1,6 +1,6 @@
-name: iqual blog - comment
+name: iqual Blog - comment
 description: comment extension for iq_blog module
-package: Custom
+package: iqual Blog
 type: module
 core: 8.x
 dependencies:

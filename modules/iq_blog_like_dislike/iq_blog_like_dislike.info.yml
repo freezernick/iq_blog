@@ -1,6 +1,6 @@
-name: iqual blog - like/dislike
+name: iqual Blog - like/dislike
 description: like/dislike extension for iq_blog module
-package: Custom
+package: iqual Blog
 type: module
 core: 8.x
 dependencies:
