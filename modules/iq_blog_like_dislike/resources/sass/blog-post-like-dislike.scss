@@ -42,6 +42,10 @@
           float: none;
           padding: 0;
           color: inherit;
+          span{
+            float: none;
+            padding: 0;
+          }
           &:not(:empty):before{
             content: "(";
           }

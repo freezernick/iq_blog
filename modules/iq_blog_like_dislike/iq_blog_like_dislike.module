@@ -17,11 +17,14 @@ function iq_blog_like_dislike_preprocess_node__iq_blog_post(&$variables) {
  */
 function iq_blog_like_dislike_theme() {
   return [
-    'like' => [
+    'iq_like_dislike' => [
       'variables' => [
         'likes' => NULL,
+        'dislikes' => NULL,
         'like_url' => NULL,
+        'dislike_url' => NULL,
         'entity_id' => NULL,
+        'hide_dislike' => NULL,
       ],
     ],
   ];

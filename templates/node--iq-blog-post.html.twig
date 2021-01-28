@@ -140,7 +140,7 @@
         {% if node.field_iq_like_dislike.likes %}
         <div class="col-xs-12 col-sm-2 iq-column info-holder likes-holder">
           <div class="info-item likes">
-            <p class="title"><i class="far fa-thumbs-up"></i> {{ node.field_iq_like_dislike.likes }}</p>
+            <p class="title"><i class="far fa-thumbs-up"></i> <span data-like-dislike-target="like-{{ node.id }}">{{ node.field_iq_like_dislike.likes }}</span></p>
           </div>
         </div>
         {% endif %}

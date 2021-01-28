@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.iq_blog_post_comment_answer
+    - field.storage.comment.field_iq_like_dislike
+  module:
+    - like_dislike
+id: comment.iq_blog_post_comment_answer.field_iq_like_dislike
+field_name: field_iq_like_dislike
+entity_type: comment
+bundle: iq_blog_post_comment_answer
+label: Likes
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    likes: '0'
+    dislikes: '0'
+    clicked_by: null
+default_value_callback: ''
+settings: {  }
+field_type: like_dislike

@@ -1,0 +1,5 @@
+services:
+  iq_blog_like_dislike.route_subscriber:
+    class: Drupal\iq_blog_like_dislike\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

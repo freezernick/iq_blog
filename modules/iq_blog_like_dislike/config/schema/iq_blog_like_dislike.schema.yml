@@ -1,0 +1,7 @@
+field.formatter.settings.iq_blog_like_formatter:
+  type: mapping
+  label: 'q Blog - Like/Disklike hide dislike button'
+  mapping:
+    hide_dislike:
+      type: boolean
+      label: 'Hide dislike'
