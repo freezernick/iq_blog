@@ -1,7 +1,7 @@
 name: iqual Blog
 description: Base blog system for iqual
 package: iqual Blog
-type: Blog
+type: module
 core: 8.x
 dependencies:
   - drupal:datetime
