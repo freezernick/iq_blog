@@ -2,3 +2,5 @@ blog-post:
   css:
     theme:
       resources/css/blog-post.css: {}
+  js:
+    resources/js/blog-post.js: {}
