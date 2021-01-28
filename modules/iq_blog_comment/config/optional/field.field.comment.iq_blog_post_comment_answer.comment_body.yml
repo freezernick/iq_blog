@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.iq_blog_post_comment_answer
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.iq_blog_post_comment_answer.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: iq_blog_post_comment_answer
+label: Comment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.iq_blog_post_comment_answer
+    - field.field.comment.iq_blog_post_comment_answer.comment_body
+  module:
+    - text
+id: comment.iq_blog_post_comment_answer.default
+targetEntityType: comment
+bundle: iq_blog_post_comment_answer
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

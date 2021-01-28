@@ -91,11 +91,20 @@
 }
 
 .node--type-iq-blog-post{
-  .field--type-pagedesigner-item{
-    margin-left: -30px;
-    width: 100vw;
+  .field--type-comment{
+    .comment{
+      display: flex;
+      .field--type-comment{
+        display: none;
+        &.active{
+          display: block;
+        }
+      }
+    }
   }
 }
+
+
 
 .scroll-progress {
   display: none;

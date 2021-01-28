@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.iq_blog_post_comment_answer
+id: comment.iq_blog_post_comment_answer
+target_entity_type_id: comment
+target_bundle: iq_blog_post_comment_answer
+default_langcode: site_default
+language_alterable: false

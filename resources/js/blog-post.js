@@ -18,6 +18,11 @@
       { passive: true }
     );
 
+    $('.comment').find('.comment-reply').find('a').click(function(e){
+      e.preventDefault();
+      $(this).closest('.comment').find('.field--type-comment').toggleClass('active')
+    })
+
   });
 
 
