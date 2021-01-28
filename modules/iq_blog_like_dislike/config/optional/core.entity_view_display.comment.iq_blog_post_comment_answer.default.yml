@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.iq_blog_post_comment_answer
+    - field.field.comment.iq_blog_post_comment_answer.comment_body
+    - field.field.comment.iq_blog_post_comment_answer.field_iq_like_dislike
+  module:
+    - text
+id: comment.iq_blog_post_comment_answer.default
+targetEntityType: comment
+bundle: iq_blog_post_comment_answer
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_iq_like_dislike:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: like_dislike_formatter
+    region: content
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
