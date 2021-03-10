@@ -9,18 +9,18 @@ dependencies:
     - views
   theme:
     - iq_custom
-id: views_block__iq_blog_posts_block_3
+id: views_block__iq_blog_posts_block_4
 theme: iq_custom
 region: pagedesigner
 weight: 0
 provider: null
-plugin: 'views_block:iq_blog_posts-block_3'
+plugin: 'views_block:iq_blog_posts-block_4'
 settings:
-  id: 'views_block:iq_blog_posts-block_3'
-  label: 'Blog: Übersicht'
+  id: 'views_block:iq_blog_posts-block_4'
+  label: 'Blog: Artikel Teaser'
   provider: views
   label_display: '0'
-  views_label: 'Blog: Übersicht'
+  views_label: 'Blog: Artikel Teaser'
   items_per_page: none
 visibility:
   advanced_menu_position:
