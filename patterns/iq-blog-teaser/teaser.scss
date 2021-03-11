@@ -7,7 +7,7 @@
     &:hover,
     &:focus  {
       text-decoration: none;
-      .content{
+      .content-holder{
         .btn{
           background-color: $background-color-hover-buttons;
           color: $font-color-hover-buttons;
@@ -18,7 +18,7 @@
     }
     &:active{
       text-decoration: none;
-      .content{
+      .content-holder{
         .btn{
           background-color: $background-color-active-buttons;
           color: $font-color-active-buttons;
