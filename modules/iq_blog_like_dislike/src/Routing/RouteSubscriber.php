@@ -18,7 +18,7 @@ class RouteSubscriber extends RouteSubscriberBase {
       $route->setDefaults([
         '_controller' => '\Drupal\iq_blog_like_dislike\Controller\LikeDislikeController::handler',
       ]);
-      // Remove CSRF token generation, since this would require a user session to work properly.
+      // Disable CSRF token generation, since this would require a user session to work properly.
       $requirements = $route->getRequirements();
       unset($requirements['_csrf_token']);
       $route->setRequirements($requirements);      
