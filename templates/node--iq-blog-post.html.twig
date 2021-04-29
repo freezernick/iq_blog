@@ -120,10 +120,10 @@
             </div>
           </div>
         </div>
-        {% if node.field_iq_date_publish.value %}
+        {% if node.published_at.value %}
         <div class="col-xs-12 col-sm-4 iq-column info-holder publication-holder">
           <div class="info-item publication">
-            <p class="title">{{ "Published:"|t }} {{ node.field_iq_date_publish.value|date("d.m.Y") }}</p>
+            <p class="title">{{ "Published:"|t }} {{ node.published_at.value|date("d.m.Y") }}</p>
             <p class="sub-title">{{ "Last edited:"|t }} {{ node.field_iq_date_edited.value|date("d.m.Y") }}</p>
           </div>
         </div>

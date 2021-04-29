@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.iq_blog_post.body
     - field.field.node.iq_blog_post.field_iq_blog_comment
     - field.field.node.iq_blog_post.field_iq_date_edited
-    - field.field.node.iq_blog_post.field_iq_date_publish
     - field.field.node.iq_blog_post.field_iq_highlight
     - field.field.node.iq_blog_post.field_iq_image
     - field.field.node.iq_blog_post.field_iq_lead
@@ -27,7 +26,7 @@ mode: default
 content:
   field_iq_blog_comment:
     type: comment_default
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings:
@@ -38,7 +37,6 @@ hidden:
   body: true
   field_pagedesigner_content: true
   field_iq_date_edited: true
-  field_iq_date_publish: true
   field_iq_highlight: true
   field_iq_image: true
   field_iq_lead: true
@@ -47,4 +45,6 @@ hidden:
   field_meta_tags: true
   field_yoast_seo: true
   langcode: true
+  like_and_dislike: true
   links: true
+  published_at: true
