@@ -1,5 +1,3 @@
-{% extends "@iq_barrio/layout/page.html.twig" %}
-
 {#
 /**
  * @file
@@ -68,105 +66,94 @@
  * @see html.html.twig
  */
 #}
-{% block content %}
+
 {{ attach_library('ui_patterns/text.text') }}
 {{ attach_library('iq_blog/blog-post') }}
-<div id="main" class="{{ container }}">
 
-  <div class="scroll-progress" data-scroll-progress></div>
-  {{ page.breadcrumb }}
+<div class="scroll-progress" data-scroll-progress></div>
+{{ page.breadcrumb }}
 
-  <main{{content_attributes}}>
-    <section class="section">
-      <a id="main-content" tabindex="-1"></a>
-
-      {% if node.field_iq_image.target_id > 0 %}
-      <div class="row iq-row fullwidth-large fullwidth-medium fullwidth-small nogutter-large nogutter-medium nogutter-small blog-header ">
-        <div class="col iq-column">
-          {{ pattern('img', {
-            image_img: file_url(node.field_iq_image.0.entity.field_media_image.entity.uri.value),
-            image_title: node.title.value,
-            image_alt: node.title.value,
-          }) }}
-        </div>
-      </div>
-      {% endif %}
-
-      <div class="row iq-row blog-intro">
-        <div class="col-xs-12 col-md-12 iq-column">
-          <div class="iq-text">
-            {% if node.field_iq_topics|length > 0 %}
-            <p class="pre-title">
-              {% for tag in node.field_iq_topics %}
-              <span class="topic">{{ tag.entity.name.0.value }}</span>{% if not loop.last %}, {% endif %}
-              {% endfor %}
-            </p>
-            {% endif %}
-            <h1>{{node.title.value}}</h1>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 iq-column info-holder author-holder">
-          <div class="info-item author">
-            {% if node.uid.0.entity.field_iq_profile_picture.0.entity.field_media_image.entity.uri.value %}
-            {{ pattern('img', {
-              image_img: file_url(node.uid.0.entity.field_iq_profile_picture.0.entity.field_media_image.entity.uri.value),
-              image_title: node.uid.0.entity.name.value,
-              image_alt: node.uid.0.entity.name.value,
-            }) }}
-            {% endif %}
-            <div>
-              <p class="title">{{ node.uid.0.entity.name.value }}</p>
-              <p class="sub-title">{{ node.uid.0.entity.field_iq_function.value }}</p>
-            </div>
-          </div>
-        </div>
-        {% if node.published_at.value %}
-        <div class="col-xs-12 col-sm-4 iq-column info-holder publication-holder">
-          <div class="info-item publication">
-            <p class="title">{{ "Published:"|t }} {{ node.published_at.value|date("d.m.Y") }}</p>
-            <p class="sub-title">{{ "Last edited:"|t }} {{ node.field_iq_date_edited.value|date("d.m.Y") }}</p>
-          </div>
-        </div>
-        {% endif %}
-        {% if node.field_iq_reading_duration.value %}
-        <div class="col-xs-12 col-sm-2 iq-column info-holder reading-duration-holder">
-          <div class="info-item reading-duration">
-            <p class="title">{{ "Reading duration"|t }}</p>
-            <p class="sub-title">{{ node.field_iq_reading_duration.value }}</p>
-          </div>
-        </div>
-        {% endif %}
-
-        {% if node.field_iq_like_dislike.likes %}
-        <div class="col-xs-12 col-sm-2 iq-column info-holder likes-holder">
-          <div class="info-item likes">
-            <p class="title"><i class="far fa-thumbs-up"></i> <span data-like-dislike-target="like-{{ node.id }}">{{ node.field_iq_like_dislike.likes }}</span></p>
-          </div>
-        </div>
-        {% endif %}
-
-        <div class="col-xs-12 col-md-12 iq-column"></div>
-
-        {% if node.field_iq_lead.value %}
-        <div class="col-xs-12 col-md-8 iq-column blog-lead">
-          <div class="iq-text lead">
-            {{ node.field_iq_lead.value|raw }}
-          </div>
-        </div>
-        {% endif %}
-      </div>
-
-      {{ node.field_pagedesigner_content|view({label: 'hidden', type: 'pagedesigner_formatter', settings: {}}) }}
-
-      <div class="row iq-row blog-content">
-        <div class="col-xs-12 col-md-12 iq-column">
-          {{ content }}
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-
+{% if node.field_iq_image.target_id > 0 %}
+<div class="row iq-row fullwidth-large fullwidth-medium fullwidth-small nogutter-large nogutter-medium nogutter-small blog-header ">
+  <div class="col iq-column">
+    {{ pattern('img', {
+      image_img: file_url(node.field_iq_image.0.entity.field_media_image.entity.uri.value),
+      image_title: node.title.value,
+      image_alt: node.title.value,
+    }) }}
+  </div>
 </div>
-{% endblock %}
+{% endif %}
+
+<div class="row iq-row blog-intro">
+  <div class="col-xs-12 col-md-12 iq-column">
+    <div class="iq-text">
+      {% if node.field_iq_topics|length > 0 %}
+      <p class="pre-title">
+        {% for tag in node.field_iq_topics %}
+        <span class="topic">{{ tag.entity.name.0.value }}</span>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+      </p>
+      {% endif %}
+      <h1>{{node.title.value}}</h1>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4 iq-column info-holder author-holder">
+    <div class="info-item author">
+      {% if node.uid.0.entity.field_iq_profile_picture.0.entity.field_media_image.entity.uri.value %}
+      {{ pattern('img', {
+        image_img: file_url(node.uid.0.entity.field_iq_profile_picture.0.entity.field_media_image.entity.uri.value),
+        image_title: node.uid.0.entity.name.value,
+        image_alt: node.uid.0.entity.name.value,
+      }) }}
+      {% endif %}
+      <div>
+        <p class="title">{{ node.uid.0.entity.name.value }}</p>
+        <p class="sub-title">{{ node.uid.0.entity.field_iq_function.value }}</p>
+      </div>
+    </div>
+  </div>
+  {% if node.published_at.value %}
+  <div class="col-xs-12 col-sm-4 iq-column info-holder publication-holder">
+    <div class="info-item publication">
+      <p class="title">{{ "Published:"|t }} {{ node.published_at.value|date("d.m.Y") }}</p>
+      <p class="sub-title">{{ "Last edited:"|t }} {{ node.field_iq_date_edited.value|date("d.m.Y") }}</p>
+    </div>
+  </div>
+  {% endif %}
+  {% if node.field_iq_reading_duration.value %}
+  <div class="col-xs-12 col-sm-2 iq-column info-holder reading-duration-holder">
+    <div class="info-item reading-duration">
+      <p class="title">{{ "Reading duration"|t }}</p>
+      <p class="sub-title">{{ node.field_iq_reading_duration.value }}</p>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if node.field_iq_like_dislike.likes %}
+  <div class="col-xs-12 col-sm-2 iq-column info-holder likes-holder">
+    <div class="info-item likes">
+      <p class="title"><i class="far fa-thumbs-up"></i> <span data-like-dislike-target="like-{{ node.id }}">{{ node.field_iq_like_dislike.likes }}</span></p>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="col-xs-12 col-md-12 iq-column"></div>
+
+  {% if node.field_iq_lead.value %}
+  <div class="col-xs-12 col-md-8 iq-column blog-lead">
+    <div class="iq-text lead">
+      {{ node.field_iq_lead.value|raw }}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+{{ node.field_pagedesigner_content|view({label: 'hidden', type: 'pagedesigner_formatter', settings: {}}) }}
+
+<div class="row iq-row blog-content">
+  <div class="col-xs-12 col-md-12 iq-column">
+    {{ content }}
+  </div>
+</div>
+
