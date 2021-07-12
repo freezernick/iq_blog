@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: iq_og_image
+label: 'OG:Image'
+effects:
+  f17c3d98-67aa-4f1b-8c18-d67e36947f4c:
+    uuid: f17c3d98-67aa-4f1b-8c18-d67e36947f4c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 627
+      anchor: center-center

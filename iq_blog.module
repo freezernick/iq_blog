@@ -5,6 +5,9 @@
  * Contains iq_blog.module.
  */
 
+use Drupal\node\NodeInterface;
+use Drupal\image\Entity\ImageStyle;
+
 /**
  * Implements hook_theme().
  */
@@ -14,4 +17,74 @@ function iq_blog_theme($existing, $type, $theme, $path) {
       'base hook' => 'node',
     ],
   ];
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function iq_blog_page_attachments_alter(array &$page) {
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface && $node->gettype() == 'iq_blog_post') {
+
+    $page['#attached']['html_head'][] = [
+      [
+        '#tag' => 'meta',
+        '#attributes' => [
+          "property" => "og:type",
+          "content" => 'blog',
+        ],
+      ],
+      'og:type',
+    ];
+
+    $page['#attached']['html_head'][] = [
+      [
+        '#tag' => 'meta',
+        '#attributes' => [
+          "property" => "og:title",
+          "content" => $node->title->value,
+        ],
+      ],
+      'og:title',
+    ];
+
+    $page['#attached']['html_head'][] = [
+      [
+        '#tag' => 'meta',
+        '#attributes' => [
+          "property" => "og:description",
+          "content" => trim(preg_replace('/\s\s+/', ' ', strip_tags($node->field_iq_lead->value))),
+        ],
+      ],
+      'og:description',
+    ];
+
+    $page['#attached']['html_head'][] = [
+      [
+        '#tag' => 'meta',
+        '#attributes' => [
+          "property" => "og:url",
+          "content" => $node->toUrl()->setAbsolute()->toString(),
+        ],
+      ],
+      'og:url',
+    ];
+
+    $imageUri = $node->field_iq_image->entity->field_media_image->entity->uri->value;
+    if ($imageUri) {
+      $style = ImageStyle::load('iq_og_image');
+      $page['#attached']['html_head'][] = [
+        [
+          '#tag' => 'meta',
+          '#attributes' => [
+            "property" => "og:image",
+            "content" => $style->buildUrl($imageUri),
+          ],
+        ],
+        'og:image',
+      ];
+    }
+  }
+
 }
