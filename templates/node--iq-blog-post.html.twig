@@ -117,7 +117,9 @@
   <div class="col-xs-12 col-sm-4 iq-column info-holder publication-holder">
     <div class="info-item publication">
       <p class="title">{{ "Published:"|t }} {{ node.published_at.value|date("d.m.Y") }}</p>
+      {% if node.field_iq_date_edited.value %}
       <p class="sub-title">{{ "Last edited:"|t }} {{ node.field_iq_date_edited.value|date("d.m.Y") }}</p>
+      {% endif %}
     </div>
   </div>
   {% endif %}
