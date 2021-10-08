@@ -16,6 +16,12 @@
         padding: 0;
         width: auto;
         color: $color-primary;
+        &.disabled{
+          > * {
+            opacity: 0.6;
+            cursor: inherit;
+          }
+        }
         a{
           border: none;
           float: none;
@@ -52,6 +58,10 @@
           &:not(:empty):after{
             content: ")";
           }
+        }
+
+        > .ajax-progress{
+          display: none;
         }
       }
       .like{

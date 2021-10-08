@@ -2,3 +2,5 @@ blog-post-like-dislike:
   css:
     theme:
       resources/css/blog-post-like-dislike.css: {}
+  js:
+    resources/js/blog-post-like-dislike.js: {}
