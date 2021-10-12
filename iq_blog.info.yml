@@ -2,7 +2,7 @@ name: iqual Blog
 description: Base blog system for iqual
 package: iqual Blog
 type: module
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 dependencies:
   - drupal:datetime
   - pagedesigner_block_adaptable:pagedesigner_block_adaptable
