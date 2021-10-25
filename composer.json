@@ -11,7 +11,6 @@
   "require": {
     "iqual/pagedesigner_block_adaptable": "^2.0",
     "drupal/iq_entity_browsers": "^2.0",
-    "drupal/like_dislike": "^1.1",
     "drupal/publication_date": "^2.0",
     "drupal/scheduler": "^1.4",
     "drupal/twig_tweak": "^2.0"
