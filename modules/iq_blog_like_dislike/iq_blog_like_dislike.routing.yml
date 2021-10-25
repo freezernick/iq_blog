@@ -1,0 +1,7 @@
+iq_blog_like_dislike.manager:
+  path: like-dislike/{clicked}/{data}
+  defaults:
+    _controller: '\Drupal\iq_blog_like_dislike\Controller\LikeDislikeController::handler'
+  requirements:
+    _permission: 'access content'
+

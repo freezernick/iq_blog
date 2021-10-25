@@ -5,7 +5,7 @@ dependencies:
     - field.storage.node.field_iq_like_dislike
     - node.type.iq_blog_post
   module:
-    - like_dislike
+    - iq_blog_like_dislike
 id: node.iq_blog_post.field_iq_like_dislike
 field_name: field_iq_like_dislike
 entity_type: node
@@ -21,4 +21,4 @@ default_value:
     clicked_by: null
 default_value_callback: ''
 settings: {  }
-field_type: like_dislike
+field_type: iq_blog_like_dislike

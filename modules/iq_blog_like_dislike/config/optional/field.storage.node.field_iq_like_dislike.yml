@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
-    - like_dislike
+    - iq_blog_like_dislike
     - node
 id: node.field_iq_like_dislike
 field_name: field_iq_like_dislike
 entity_type: node
-type: like_dislike
+type: iq_blog_like_dislike
 settings: {  }
-module: like_dislike
+module: iq_blog_like_dislike
 locked: false
 cardinality: 1
 translatable: true

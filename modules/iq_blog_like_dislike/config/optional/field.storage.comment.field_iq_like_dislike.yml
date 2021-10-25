@@ -3,13 +3,13 @@ status: true
 dependencies:
   module:
     - comment
-    - like_dislike
+    - iq_blog_like_dislike
 id: comment.field_iq_like_dislike
 field_name: field_iq_like_dislike
 entity_type: comment
-type: like_dislike
+type: iq_blog_like_dislike
 settings: {  }
-module: like_dislike
+module: iq_blog_like_dislike
 locked: false
 cardinality: 1
 translatable: true

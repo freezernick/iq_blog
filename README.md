@@ -13,7 +13,7 @@ Integration of comment Module
 Base configuration
 
 - iq_blog_like_dislike
-Integration of Like / Disklike button (https://www.drupal.org/project/like_dislike)
+Integration of Like / Disklike button (Taken from https://www.drupal.org/project/like_dislike)
 Additional FieldFormatter Plugin to only show Like button, without dislike funciton
 
 

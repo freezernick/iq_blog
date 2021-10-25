@@ -30,7 +30,7 @@ content:
     settings:
       hide_dislike: false
     third_party_settings: {  }
-    type: iq_blog_like_formatter
+    type: iq_blog_like_dislike_formatter
     region: content
   field_pagedesigner_content:
     weight: 0

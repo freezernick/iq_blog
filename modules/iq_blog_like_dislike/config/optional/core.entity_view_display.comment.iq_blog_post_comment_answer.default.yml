@@ -24,7 +24,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: like_dislike_formatter
+    type: iq_blog_like_dislike_formatter
     region: content
   links:
     weight: 2
