@@ -17,7 +17,7 @@ Integration of Like / Disklike button (Taken from https://www.drupal.org/project
 Additional FieldFormatter Plugin to only show Like button, without dislike funciton
 
 
-## Setup & Installation
+## Installation
 
 Install module as usual:
 
@@ -38,5 +38,9 @@ Follow installation instructions for entity browsers:
 https://github.com/iqual-ch/iq_entity_browsers/blob/8.x-1.x/README.md#iq_entity_browsers (skip step «Install the module using composer»)
 
 
-If needed:
-- Add Blog Artikel as filterable content type in content view
+## Configuration
+
+Add role iq_blog_author desired users.
+
+If needed: Add Blog Artikel as filterable content type in content view
+

@@ -55,6 +55,7 @@ permissions:
   - 'restful post pagedesigner_clone'
   - 'restful post pagedesigner_element'
   - 'revert iq_blog_post revisions'
+  - 'set iq_blog_post published on date'
   - 'translate any entity'
   - 'translate pagedesigner_element'
   - 'update any media'
