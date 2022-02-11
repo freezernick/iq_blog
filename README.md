@@ -24,6 +24,10 @@ Install module as usual:
     composer require iqual/iq_blog
     drush en iq_blog
 
+Add patch for ajax views.
+
+    composer patch-add drupal/ui_patterns "Support AJAX Views / Fix live preview detection" "https://patch-diff.githubusercontent.com/raw/nuvoleweb/ui_patterns/pull/269.diff"
+
 
 Rebuild CSS:
 
