@@ -113,7 +113,7 @@
       </div>
     </div>
   </div>
-  {% if node.published_at.value %}
+  {% if node.isPublished() %}
   <div class="col-xs-12 col-sm-4 iq-column info-holder publication-holder">
     <div class="info-item publication">
       <p class="title">{{ "Published:"|t }} {{ node.published_at.value|date("d.m.Y") }}</p>
