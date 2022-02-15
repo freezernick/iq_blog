@@ -14,6 +14,6 @@
     "drupal/publication_date": "^2.0",
     "drupal/scheduler": "^1.4",
     "drupal/twig_tweak": "^2.0",
-    "dupal/term_reference_tree": "^1.1"
+    "drupal/term_reference_tree": "^1.1"
   }
 }
