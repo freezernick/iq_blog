@@ -1,4 +1,4 @@
-# German translation of iq_blog_comment
+# German translation of iq_blog_like_dislike
 #
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2019-12-12 10:48+0000\n"
