@@ -118,7 +118,7 @@ class LikeDislikeFormatter extends FormatterBase implements ContainerFactoryPlug
     }
 
     $elements[] = [
-      '#theme' => 'like_dislike',
+      '#theme' => 'iq_like_dislike',
       '#likes' => array_key_exists('likes', $initial_data) ? $initial_data['likes'] : 0,
       '#dislikes' => array_key_exists('dislikes', $initial_data) ? $initial_data['dislikes'] : 0,
       '#like_url' => $like_url . $destination,
@@ -127,7 +127,7 @@ class LikeDislikeFormatter extends FormatterBase implements ContainerFactoryPlug
     ];
 
     $elements['#attached']['library'][] = 'core/drupal.ajax';
-    $elements['#attached']['library'][] = 'like_dislike/like_dislike';
+    $elements['#attached']['library'][] = 'iq_blog_like_dislike/blog-post-like-dislike';
 
     $elements[0]['#theme'] = 'iq_like_dislike';
     $elements[0]['#hide_dislike'] = $this->getSetting('hide_dislike');
