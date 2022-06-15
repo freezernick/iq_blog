@@ -108,11 +108,11 @@ class LikeDislikeController extends ControllerBase {
       );
     }
     elseif ($clicked == 'dislike') {
-      $already_clicked = !$flood->isAllowed('iq_blog.dislikenid_' . $entity_data->id(), 1, 86400);
+      $already_clicked = !$flood->isAllowed('iq_blog.dislike_nid_' . $entity_data->id(), 1, 86400);
       if (!$already_clicked) {
-        $entity_data->$field_name->dislikes--;
+        $entity_data->$field_name->dislikes++;
         $entity_data->save();
-        $flood->register('iq_blog.dislike' . $entity_data->id(), 86400);
+        $flood->register('iq_blog.dislike_nid_' . $entity_data->id(), 86400);
       }
       $return = $response->addCommand(
         new HtmlCommand('[data-like-dislike-target="dislike-' . $decode_data->entity_id . '"]', '<span>' . $entity_data->$field_name->dislikes . '</span>')
