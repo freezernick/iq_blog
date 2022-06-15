@@ -86,36 +86,36 @@ class LikeDislikeController extends ControllerBase {
     $response = new AjaxResponse();
 
     // Decode the url data.
-    $decode_data = json_decode(base64_decode($data));
+    $dataDecoded = json_decode(base64_decode($data));
 
     // Load the entity content.
-    $entity_data = $this->entityTypeManager
-      ->getStorage($decode_data->entity_type)
-      ->load($decode_data->entity_id);
-    $field_name = $decode_data->field_name;
+    $entity = $this->entityTypeManager
+      ->getStorage($dataDecoded->entity_type)
+      ->load($dataDecoded->entity_id);
+    $field_name = $dataDecoded->field_name;
 
     // Use flood service to check if ip has already liked/disliked.
     $flood = \Drupal::flood();
     if ($clicked == 'like') {
-      $already_clicked = !$flood->isAllowed('iq_blog.like_nid_' . $entity_data->id(), 1, 86400);
-      if (!$already_clicked) {
-        $entity_data->$field_name->likes++;
-        $entity_data->save();
-        $flood->register('iq_blog.like_nid_' . $entity_data->id(), 86400);
+      $alreadyClicked = !$flood->isAllowed('iq_blog.like_nid_' . $entity->id(), 1, 86400);
+      if (!$alreadyClicked) {
+        $entity->$field_name->likes++;
+        $entity->save();
+        $flood->register('iq_blog.like_nid_' . $entity->id(), 86400);
       }
       $return = $response->addCommand(
-        new HtmlCommand('[data-like-dislike-target="like-' . $decode_data->entity_id . '"]', '<span>' . $entity_data->$field_name->likes . '</span>')
+        new HtmlCommand('[data-like-dislike-target="like-' . $dataDecoded->entity_id . '"]', '<span>' . $entity->$field_name->likes . '</span>')
       );
     }
     elseif ($clicked == 'dislike') {
-      $already_clicked = !$flood->isAllowed('iq_blog.dislike_nid_' . $entity_data->id(), 1, 86400);
-      if (!$already_clicked) {
-        $entity_data->$field_name->dislikes++;
-        $entity_data->save();
-        $flood->register('iq_blog.dislike_nid_' . $entity_data->id(), 86400);
+      $alreadyClicked = !$flood->isAllowed('iq_blog.dislike_nid_' . $entity->id(), 1, 86400);
+      if (!$alreadyClicked) {
+        $entity->$field_name->dislikes++;
+        $entity->save();
+        $flood->register('iq_blog.dislike_nid_' . $entity->id(), 86400);
       }
       $return = $response->addCommand(
-        new HtmlCommand('[data-like-dislike-target="dislike-' . $decode_data->entity_id . '"]', '<span>' . $entity_data->$field_name->dislikes . '</span>')
+        new HtmlCommand('[data-like-dislike-target="dislike-' . $dataDecoded->entity_id . '"]', '<span>' . $entity->$field_name->dislikes . '</span>')
       );
     }
 
