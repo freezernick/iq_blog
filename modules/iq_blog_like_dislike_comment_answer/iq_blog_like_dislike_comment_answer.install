@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the iqual module.
+ */
+
+/**
+ * Apply changes to configuration / environment on installation.
+ */
+function iq_blog_like_dislike_comment_answer_install() {
+  _add_like_dislike_to_comment_answer_display();
+}
+
+/**
+ * Set config for iq_blog_post_comment_answer comment display.
+ */
+function _add_like_dislike_to_comment_answer_display() {
+  $config = \Drupal::configFactory()->getEditable('core.entity_view_display.comment.iq_blog_post_comment_answer.default');
+  $content = $config->get('content');
+
+  $weight = max(array_map(function ($item) {
+    return $item['weight'];
+  }, $content));
+  $weight++;
+
+  if (array_key_exists('field_iq_blog_comment', $content)) {
+    $weightTmp = $weight;
+    $weight = $content['field_iq_blog_comment']['weight'];
+    $content['field_iq_blog_comment']['weight'] = $weightTmp;
+  }
+
+  $likeDislikeFieldSettings = [
+    'weight' => $weight,
+    'label' => 'hidden',
+    'settings' => [
+      'hide_dislike' => FALSE,
+    ],
+    'third_party_settings' => [],
+    'type' => 'iq_blog_like_dislike_formatter',
+    'region' => 'content',
+  ];
+
+  $content['field_iq_like_dislike'] = $likeDislikeFieldSettings;
+  $config->set('content', $content);
+  $config->save();
+}

@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the iqual module.
+ */
+
+/**
+ * Apply changes to configuration / environment on installation.
+ */
+function iq_blog_comment_install() {
+  _add_comment_to_node_display();
+}
+
+/**
+ * Set config for iq_blog_post node display.
+ */
+function _add_comment_to_node_display() {
+  $config = \Drupal::configFactory()->getEditable('core.entity_view_display.node.iq_blog_post.default');
+  $content = $config->get('content');
+
+  $weight = max(array_map(function ($item) {
+    return $item['weight'];
+  }, $content));
+
+  $commentFieldSettings = [
+    'type' => 'comment_default',
+    'weight' => ++$weight,
+    'region' => 'content',
+    'label' => 'hidden',
+    'settings' => [
+      'view_mode' => 'default',
+      'pager_id' => 0,
+    ],
+    'third_party_settings' => [],
+  ];
+
+  $content['field_iq_blog_comment'] = $commentFieldSettings;
+
+  $config->set('content', $content);
+  $config->save();
+}
