@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the iqual module.
+ */
+
+/**
+ * Apply changes to configuration / environment on installation.
+ */
+function iq_blog_scheduling_install() {
+  _enable_scheduler_on_iq_blog_post();
+}
+
+/**
+ * Set config for iq_blog_post content type.
+ */
+function _enable_scheduler_on_iq_blog_post() {
+  $config = \Drupal::configFactory()->getEditable('node.type.iq_blog_post');
+  $thirdPatrySettings = $config->get('third_party_settings');
+
+  $schedulerOptions = [
+    'expand_fieldset' => 'always',
+    'fields_display_mode' => 'vertical_tab',
+    'publish_enable' => TRUE,
+    'publish_past_date' => 'publish',
+    'publish_past_date_created' => FALSE,
+    'publish_required' => FALSE,
+    'publish_revision' => FALSE,
+    'publish_touch' => FALSE,
+    'show_message_after_update' => TRUE,
+    'unpublish_enable' => TRUE,
+    'unpublish_required' => FALSE,
+    'unpublish_revision' => FALSE,
+  ];
+  $thirdPatrySettings['scheduler'] = $schedulerOptions;
+  $config->set('third_party_settings', $thirdPatrySettings);
+  $config->save();
+}

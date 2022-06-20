@@ -21,7 +21,6 @@ dependencies:
     - pagedesigner_yoast
     - path
     - publication_date
-    - scheduler
     - text
 id: node.iq_blog_post.default
 targetEntityType: node
@@ -121,11 +120,6 @@ content:
   published_at:
     type: publication_date_timestamp
     weight: 12
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  scheduler_settings:
-    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
