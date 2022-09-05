@@ -9,8 +9,8 @@
     }
   ],
   "require": {
-    "iqual/pagedesigner_block_adaptable": "^2.0",
-    "drupal/iq_entity_browsers": "^2.0",
+    "drupal/pagedesigner_block_adaptable": "^2.0",
+    "iqual/iq_entity_browsers": "^2.0",
     "drupal/publication_date": "^2.0",
     "drupal/scheduler": "^1.4",
     "drupal/twig_tweak": "^2.0",
