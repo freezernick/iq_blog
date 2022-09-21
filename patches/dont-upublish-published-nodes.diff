@@ -1,0 +1,12 @@
+diff --git a/scheduler.module b/scheduler.module
+--- a/scheduler.module
++++ b/scheduler.module
+@@ -500,7 +500,7 @@
+     }
+     else {
+       // Ensure the node is unpublished as it will be published by cron later.
+-      $node->setUnpublished();
++      // $node->setUnpublished();
+
+       // Only inform the user that the node is scheduled if publication has not
+       // been prevented by other modules. Those modules have to display a
