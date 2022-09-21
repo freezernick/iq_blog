@@ -39,7 +39,7 @@ Install module as usual:
 
     drush en iq_blog_like_dislike
     drush en iq_blog_like_dislike_comment
-    iq_blog_like_dislike_comment_answer
+    dresh en iq_blog_like_dislike_comment_answer
 
 
 Add patch for ajax views.
