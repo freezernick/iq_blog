@@ -10,6 +10,7 @@
  */
 function iq_blog_scheduling_install() {
   _enable_scheduler_on_iq_blog_post();
+  _set_schedulder_cron_interval();
 }
 
 /**
@@ -35,5 +36,14 @@ function _enable_scheduler_on_iq_blog_post() {
   ];
   $thirdPatrySettings['scheduler'] = $schedulerOptions;
   $config->set('third_party_settings', $thirdPatrySettings);
+  $config->save();
+}
+
+/**
+ * Set config for schedulder_cron module.
+ */
+function _set_schedulder_cron_interval() {
+  $config = \Drupal::configFactory()->getEditable('scheduler_cron.settings');
+  $config->set('interval', '1');
   $config->save();
 }
