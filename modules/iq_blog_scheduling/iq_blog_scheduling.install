@@ -33,6 +33,7 @@ function _enable_scheduler_on_iq_blog_post() {
     'unpublish_enable' => TRUE,
     'unpublish_required' => FALSE,
     'unpublish_revision' => FALSE,
+    'maintain_publication_state' => TRUE,
   ];
   $thirdPatrySettings['scheduler'] = $schedulerOptions;
   $config->set('third_party_settings', $thirdPatrySettings);
