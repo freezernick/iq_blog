@@ -16,12 +16,5 @@
     "drupal/frontendpublishing": "^2.0",
     "drupal/twig_tweak": "^2.0",
     "drupal/term_reference_tree": "^1.1"
-  },
-  "extra": {
-    "patches": {
-      "drupal/scheduler": {
-        "Issue 3210321 - Don't unpublish a node when scheduled to publish": "./public/modules/custom/iq_blog/patches/dont-upublish-published-nodes.diff"
-      }
-    }
   }
 }
