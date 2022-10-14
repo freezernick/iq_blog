@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "iqual/pagedesigner_block_adaptable": "^2.0",
+    "drupal/pagedesigner_block_adaptable": "^2.0",
     "drupal/iq_entity_browsers": "^2.0",
     "drupal/publication_date": "^2.0",
     "iqual/scheduler_cron": "^2.0",
