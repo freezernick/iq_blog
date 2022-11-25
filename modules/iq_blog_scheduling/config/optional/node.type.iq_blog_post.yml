@@ -25,6 +25,7 @@ third_party_settings:
     unpublish_enable: true
     unpublish_required: false
     unpublish_revision: false
+    maintain_publication_state: true
 name: 'Blog Artikel'
 type: iq_blog_post
 description: ''
