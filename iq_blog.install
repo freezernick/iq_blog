@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the iqual module.
+ */
+
+/**
+ * Install iq_blog_scheduling submodule if scheduling is set up for blog posts.
+ */
+function iq_blog_update_8001() {
+  _install_submodule();
+}
+
+/**
+ * Install iq_blog_scheduling submodule if scheduling is set up for blog posts.
+ */
+function _install_submodule() {
+  $config = \Drupal::configFactory()->getEditable('node.type.iq_blog_post');
+  $thirdPatrySettings = $config->get('third_party_settings');
+  if (array_key_exists('scheduler', $thirdPatrySettings)) {
+    $moduleList = \Drupal::service('extension.list.module');
+    if ($moduleList->exists('iq_blog_scheduling')) {
+      echo "Installing iq_blog_scheduling submodule...\n";
+      \Drupal::service('module_installer')->install(['iq_blog_scheduling']);
+      echo "installation successfull.\n";
+    }
+  }
+}

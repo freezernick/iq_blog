@@ -1,0 +1,12 @@
+name: iqual Blog - Scheduling
+description: Scheduling extension for iq_blog module
+package: iqual Blog
+type: module
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - iq_blog:iq_blog
+  - scheduler_cron:scheduler_cron
+  - frontendpublishing:frontendpublishing_scheduler
+
+'interface translation project': iq_blog_scheduling
+'interface translation server pattern': modules/custom/iq_blog/modules/iq_blog_scheduling/translations/iq_blog_scheduling-%language.po

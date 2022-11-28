@@ -1,4 +1,4 @@
-# German translation of iq_blog_like_dislike
+# German translation of iq_blog_comment
 #
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2019-12-12 10:48+0000\n"
@@ -10,9 +10,3 @@
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-
-msgid "Like"
-msgstr "Gefällt mir"
-
-msgid "Dislike"
-msgstr "Gefällt mir nicht"

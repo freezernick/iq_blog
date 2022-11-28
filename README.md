@@ -8,14 +8,21 @@ Inlcudes:
  - Blog author role with permissions
 
  **Submodules**
-- iq_blog_comments
-Integration of comment Module
-Base configuration
+- iq_blog_scheduling\
+Base config for scheduling options for Blog posts. Base on iqual-ch/iqual-schedule-cron package
 
-- iq_blog_like_dislike
-Integration of Like / Disklike button (Taken from https://www.drupal.org/project/like_dislike)
-Additional FieldFormatter Plugin to only show Like button, without dislike funciton
 
+- iq_blog_comments\
+Integration of comment module including a base comment type (iq_blog_post_comment) and an answer type (iq_blog_post_comment_answer).
+
+- iq_blog_like_dislike\
+Integration of Like / Disklike button (Taken from https://www.drupal.org/project/like_dislike). Additional FieldFormatter Plugin to only show Like button, without dislike funciton. This module automatically installs the iq_like_dislike field to the iq_blog_post content type.
+
+- iq_blog_like_dislike_comment\
+This module automatically installs the iq_like_dislike field to the iq_blog_post_comment comment type.
+
+- iq_blog_like_dislike_comment_answer\
+This module automatically installs the iq_blog_post_comment_answer field to the iq_blog_post_comment comment type.
 
 ## Installation
 
@@ -23,6 +30,17 @@ Install module as usual:
 
     composer require iqual/iq_blog
     drush en iq_blog
+
+(Optional) Install submodules:
+
+    drush en iq_blog_scheduling
+
+    drush en iq_blog_comments
+
+    drush en iq_blog_like_dislike
+    drush en iq_blog_like_dislike_comment
+    dresh en iq_blog_like_dislike_comment_answer
+
 
 Add patch for ajax views.
 

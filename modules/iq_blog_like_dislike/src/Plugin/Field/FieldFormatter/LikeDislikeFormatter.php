@@ -92,21 +92,21 @@ class LikeDislikeFormatter extends FormatterBase implements ContainerFactoryPlug
     $elements = [];
 
     // Data to be passed in the url.
-    $initial_data = [
+    $initialData = [
       'entity_type' => $entity->getEntityTypeId(),
       'entity_id' => $entity->id(),
       'field_name' => $items->getFieldDefinition()->getName(),
     ];
     foreach ($items as $delta => $item) {
-      $initial_data['likes'] = $items[$delta]->likes;
-      $initial_data['dislikes'] = $items[$delta]->dislikes;
+      $initialData['likes'] = $items[$delta]->likes;
+      $initialData['dislikes'] = $items[$delta]->dislikes;
     }
-    $data = base64_encode(json_encode($initial_data));
+    $data = base64_encode(json_encode($initialData));
 
-    $like_url = Url::fromRoute(
+    $likeUrl = Url::fromRoute(
       'iq_blog_like_dislike.manager', ['clicked' => 'like', 'data' => $data]
     )->toString();
-    $dislike_url = Url::fromRoute(
+    $dislikeUrl = Url::fromRoute(
       'iq_blog_like_dislike.manager', ['clicked' => 'dislike', 'data' => $data]
     )->toString();
 
@@ -118,16 +118,16 @@ class LikeDislikeFormatter extends FormatterBase implements ContainerFactoryPlug
     }
 
     $elements[] = [
-      '#theme' => 'like_dislike',
-      '#likes' => array_key_exists('likes', $initial_data) ? $initial_data['likes'] : 0,
-      '#dislikes' => array_key_exists('dislikes', $initial_data) ? $initial_data['dislikes'] : 0,
-      '#like_url' => $like_url . $destination,
-      '#dislike_url' => $dislike_url . $destination,
-      '#entity_id' => $initial_data['entity_id'],
+      '#theme' => 'iq_like_dislike',
+      '#likes' => array_key_exists('likes', $initialData) ? $initialData['likes'] : 0,
+      '#dislikes' => array_key_exists('dislikes', $initialData) ? $initialData['dislikes'] : 0,
+      '#like_url' => $likeUrl . $destination,
+      '#dislike_url' => $dislikeUrl . $destination,
+      '#entity_id' => $initialData['entity_id'],
     ];
 
     $elements['#attached']['library'][] = 'core/drupal.ajax';
-    $elements['#attached']['library'][] = 'like_dislike/like_dislike';
+    $elements['#attached']['library'][] = 'iq_blog_like_dislike/blog-post-like-dislike';
 
     $elements[0]['#theme'] = 'iq_like_dislike';
     $elements[0]['#hide_dislike'] = $this->getSetting('hide_dislike');
