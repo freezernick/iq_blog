@@ -35,11 +35,11 @@ Install module as usual:
 
     drush en iq_blog_scheduling
 
-    drush en iq_blog_comments
+    drush en iq_blog_comment
 
     drush en iq_blog_like_dislike
     drush en iq_blog_like_dislike_comment
-    dresh en iq_blog_like_dislike_comment_answer
+    drush en iq_blog_like_dislike_comment_answer
 
 
 Add patch for ajax views.
