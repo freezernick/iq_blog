@@ -61,4 +61,3 @@ https://github.com/iqual-ch/iq_entity_browsers/blob/8.x-1.x/README.md#iq_entity_
 Add role iq_blog_author desired users.
 
 If needed: Add Blog Artikel as filterable content type in content view
-

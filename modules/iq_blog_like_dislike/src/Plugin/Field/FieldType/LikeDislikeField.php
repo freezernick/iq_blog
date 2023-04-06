@@ -50,6 +50,7 @@ class LikeDislikeField extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
+    $properties = [];
     $properties['likes'] = DataDefinition::create('string')
       ->setLabel(t('likes label'));
     $properties['dislikes'] = DataDefinition::create('string')
