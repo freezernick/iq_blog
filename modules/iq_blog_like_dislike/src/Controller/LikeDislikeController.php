@@ -10,6 +10,7 @@ use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\Flood\DatabaseBackend;
 
 /**
  * Class LikeDislikeController hanldes liking via Ajax.
@@ -47,6 +48,13 @@ class LikeDislikeController extends ControllerBase {
   protected $renderer;
 
   /**
+   * The Flood service.
+   *
+   * @var \Drupal\Core\Flood\DatabaseBackend
+   */
+  protected $floodService;
+
+  /**
    * Constructs an LinkClickCountController object.
    *
    * @param \Symfony\Component\HttpFoundation\RequestStack $request
@@ -57,12 +65,15 @@ class LikeDislikeController extends ControllerBase {
    *   The current user.
    * @param \Drupal\Core\Render\RendererInterface $renderer
    *   The renderer.
+   * @param \Drupal\Core\Flood\DatabaseBackend $flood
+   *   Flood service.
    */
-  public function __construct(RequestStack $request, EntityTypeManagerInterface $entity_type_manager, AccountInterface $account, RendererInterface $renderer) {
+  public function __construct(RequestStack $request, EntityTypeManagerInterface $entity_type_manager, AccountInterface $account, RendererInterface $renderer, DatabaseBackend $flood) {
     $this->requestStack = $request;
     $this->entityTypeManager = $entity_type_manager;
     $this->currentUser = $account;
     $this->renderer = $renderer;
+    $this->floodService = $flood;
   }
 
   /**
@@ -73,7 +84,8 @@ class LikeDislikeController extends ControllerBase {
       $container->get('request_stack'),
       $container->get('entity_type.manager'),
       $container->get('current_user'),
-      $container->get('renderer')
+      $container->get('renderer'),
+      $container->get('flood')
     );
   }
 
@@ -86,7 +98,7 @@ class LikeDislikeController extends ControllerBase {
     $response = new AjaxResponse();
 
     // Decode the url data.
-    $dataDecoded = json_decode(base64_decode($data));
+    $dataDecoded = json_decode(base64_decode($data), NULL, 512, JSON_THROW_ON_ERROR);
 
     // Load the entity content.
     $entity = $this->entityTypeManager
@@ -95,24 +107,23 @@ class LikeDislikeController extends ControllerBase {
     $field_name = $dataDecoded->field_name;
 
     // Use flood service to check if ip has already liked/disliked.
-    $flood = \Drupal::flood();
     if ($clicked == 'like') {
-      $alreadyClicked = !$flood->isAllowed('iq_blog.like_nid_' . $entity->id(), 1, 86400);
+      $alreadyClicked = !$this->floodService->isAllowed('iq_blog.like_nid_' . $entity->id(), 1, 86400);
       if (!$alreadyClicked) {
         $entity->$field_name->likes++;
         $entity->save();
-        $flood->register('iq_blog.like_nid_' . $entity->id(), 86400);
+        $this->floodService->register('iq_blog.like_nid_' . $entity->id(), 86400);
       }
       $return = $response->addCommand(
         new HtmlCommand('[data-like-dislike-target="like-' . $dataDecoded->entity_id . '"]', '<span>' . $entity->$field_name->likes . '</span>')
       );
     }
     elseif ($clicked == 'dislike') {
-      $alreadyClicked = !$flood->isAllowed('iq_blog.dislike_nid_' . $entity->id(), 1, 86400);
+      $alreadyClicked = !$this->floodService->isAllowed('iq_blog.dislike_nid_' . $entity->id(), 1, 86400);
       if (!$alreadyClicked) {
         $entity->$field_name->dislikes++;
         $entity->save();
-        $flood->register('iq_blog.dislike_nid_' . $entity->id(), 86400);
+        $this->floodService->register('iq_blog.dislike_nid_' . $entity->id(), 86400);
       }
       $return = $response->addCommand(
         new HtmlCommand('[data-like-dislike-target="dislike-' . $dataDecoded->entity_id . '"]', '<span>' . $entity->$field_name->dislikes . '</span>')

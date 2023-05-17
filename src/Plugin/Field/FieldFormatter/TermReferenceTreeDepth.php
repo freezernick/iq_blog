@@ -2,9 +2,7 @@
 
 namespace Drupal\iq_blog\Plugin\Field\FieldFormatter;
 
-use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\term_reference_tree\Plugin\Field\FieldFormatter\TermReferenceTree;
 
 /**
@@ -25,6 +23,7 @@ class TermReferenceTreeDepth extends TermReferenceTree {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
 
+    $element = [];
     $data = [];
     foreach ($items->getValue() as $item) {
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($item['target_id']);

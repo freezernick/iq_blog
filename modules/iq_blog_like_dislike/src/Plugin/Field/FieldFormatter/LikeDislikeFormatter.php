@@ -101,7 +101,7 @@ class LikeDislikeFormatter extends FormatterBase implements ContainerFactoryPlug
       $initialData['likes'] = $items[$delta]->likes;
       $initialData['dislikes'] = $items[$delta]->dislikes;
     }
-    $data = base64_encode(json_encode($initialData));
+    $data = base64_encode(json_encode($initialData, JSON_THROW_ON_ERROR));
 
     $likeUrl = Url::fromRoute(
       'iq_blog_like_dislike.manager', ['clicked' => 'like', 'data' => $data]

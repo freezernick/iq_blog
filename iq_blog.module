@@ -49,16 +49,18 @@ function iq_blog_page_attachments_alter(array &$page) {
       'og:title',
     ];
 
-    $page['#attached']['html_head'][] = [
-      [
-        '#tag' => 'meta',
-        '#attributes' => [
-          "property" => "og:description",
-          "content" => trim(preg_replace('/\s\s+/', ' ', strip_tags($node->field_iq_lead->value))),
+    if ($node->field_iq_lead->value) {
+      $page['#attached']['html_head'][] = [
+        [
+          '#tag' => 'meta',
+          '#attributes' => [
+            "property" => "og:description",
+            "content" => trim(preg_replace('/\s\s+/', ' ', strip_tags($node->field_iq_lead->value))),
+          ],
         ],
-      ],
-      'og:description',
-    ];
+        'og:description',
+      ];
+    }
 
     $page['#attached']['html_head'][] = [
       [
