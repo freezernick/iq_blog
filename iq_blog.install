@@ -27,3 +27,12 @@ function _install_submodule() {
     }
   }
 }
+
+
+/**
+ * Replace iqual/scheduler_cron with drupal/scheduler_request_cron.
+ */
+function iq_blog_update_9001() {
+  \Drupal::moduleInstaller()->install('scheduler_request_cron');
+  \Drupal::moduleInstaller()->uninstall('scheduler_cron');
+}
