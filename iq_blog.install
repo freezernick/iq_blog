@@ -33,6 +33,6 @@ function _install_submodule() {
  */
 function iq_blog_update_9001() {
   $installer = \Drupal::service('module_installer');
-  $installer->install('scheduler_request_cron');
-  $installer->uninstall('scheduler_cron');
+  $installer->install(['scheduler_request_cron']);
+  $installer->uninstall(['scheduler_cron']);
 }
