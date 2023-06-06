@@ -44,7 +44,7 @@ function _enable_scheduler_on_iq_blog_post() {
  * Set config for schedulder_cron module.
  */
 function _set_schedulder_cron_interval() {
-  $config = \Drupal::configFactory()->getEditable('scheduler_cron.settings');
+  $config = \Drupal::configFactory()->getEditable('scheduler_request_cron.settings');
   $config->set('interval', '1');
   $config->save();
 }

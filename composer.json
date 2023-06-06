@@ -13,6 +13,7 @@
     "iqual/iq_entity_browsers": "^2.0",
     "drupal/publication_date": "^2.0",
     "iqual/scheduler_cron": "^2.0",
+    "drupal/scheduler_request_cron": "^3.0",
     "drupal/frontendpublishing": "^2.0",
     "drupal/twig_tweak": "^2.0",
     "drupal/term_reference_tree": "^1.1"
