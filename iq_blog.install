@@ -28,7 +28,6 @@ function _install_submodule() {
   }
 }
 
-
 /**
  * Replace iqual/scheduler_cron with drupal/scheduler_request_cron.
  */
