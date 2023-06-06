@@ -92,3 +92,10 @@ function iq_blog_page_attachments_alter(array &$page) {
   }
 
 }
+
+/**
+ * Uninstall iqual/scheduler_cron, replaced by drupal/scheduler_request_cron.
+ */
+function iq_blog_update_9001() {
+  \Drupal::moduleInstaller()->uninstall('scheduler_cron');
+}
