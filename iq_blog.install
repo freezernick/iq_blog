@@ -32,7 +32,5 @@ function _install_submodule() {
  * Replace iqual/scheduler_cron with drupal/scheduler_request_cron.
  */
 function iq_blog_update_9001() {
-  $installer = \Drupal::service('module_installer');
-  $installer->install(['scheduler_request_cron']);
-  $installer->uninstall(['scheduler_cron']);
+  \Drupal::service('module_installer')->install(['scheduler_request_cron']);
 }
