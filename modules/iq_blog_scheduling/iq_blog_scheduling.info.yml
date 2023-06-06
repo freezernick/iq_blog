@@ -5,7 +5,7 @@ type: module
 core_version_requirement: ^8.8 || ^9
 dependencies:
   - iq_blog:iq_blog
-  - scheduler_cron:scheduler_cron
+  - scheduler_request_cron:scheduler_request_cron
   - frontendpublishing:frontendpublishing_scheduler
 
 'interface translation project': iq_blog_scheduling
