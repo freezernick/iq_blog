@@ -40,11 +40,3 @@ function iq_blog_update_9001() {
   \Drupal::service('module_installer')->install(['scheduler_request_cron']);
 }
 
-/**
- * Make sure optional config is imported, so submodules can be installed aswell.
- */
-function iq_blog_install() {
-  $configPath = \Drupal::service('extension.path.resolver')->getPath('module', 'iq_blog') . '/config/optional';
-  $configSource = new FileStorage($configPath);
-  \Drupal::service('config.installer')->installOptionalConfig($configSource);
-}
