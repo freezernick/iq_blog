@@ -23,9 +23,12 @@ function _add_like_dislike_to_node_display() {
   $config = $configFactory->getEditable('core.entity_view_display.node.iq_blog_post.default', $defaultLanguage);
   $content = $config->get('content');
 
-  $weight = max(array_map(function ($item) {
-    return $item['weight'];
-  }, $content));
+  $weight = 0;
+  if (count($content)) {
+    $weight = max(array_map(function ($item) {
+      return $item['weight'];
+    }, $content));
+  }
   $weight++;
 
   if (array_key_exists('field_iq_blog_comment', $content)) {
