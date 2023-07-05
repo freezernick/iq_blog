@@ -17,7 +17,11 @@ function iq_blog_scheduling_install() {
  * Set config for iq_blog_post content type.
  */
 function _enable_scheduler_on_iq_blog_post() {
-  $config = \Drupal::configFactory()->getEditable('node.type.iq_blog_post');
+  $languageManager = \Drupal::languageManager();
+  $defaultLanguage = $languageManager->getDefaultLanguage();
+
+  $configFactory = \Drupal::configFactory();
+  $config = $configFactory->getEditable('node.type.iq_blog_post', $defaultLanguage);
   $thirdPatrySettings = $config->get('third_party_settings');
 
   $schedulerOptions = [

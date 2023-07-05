@@ -16,7 +16,11 @@ function iq_blog_comment_install() {
  * Set config for iq_blog_post node display.
  */
 function _add_comment_to_node_display() {
-  $config = \Drupal::configFactory()->getEditable('core.entity_view_display.node.iq_blog_post.default');
+  $languageManager = \Drupal::languageManager();
+  $defaultLanguage = $languageManager->getDefaultLanguage();
+
+  $configFactory = \Drupal::configFactory();
+  $config = $configFactory->getEditable('core.entity_view_display.node.iq_blog_post.default', $defaultLanguage);
   $content = $config->get('content');
 
   $weight = max(array_map(function ($item) {

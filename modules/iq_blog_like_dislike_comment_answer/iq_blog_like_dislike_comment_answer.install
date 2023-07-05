@@ -16,7 +16,11 @@ function iq_blog_like_dislike_comment_answer_install() {
  * Set config for iq_blog_post_comment_answer comment display.
  */
 function _add_like_dislike_to_comment_answer_display() {
-  $config = \Drupal::configFactory()->getEditable('core.entity_view_display.comment.iq_blog_post_comment_answer.default');
+  $languageManager = \Drupal::languageManager();
+  $defaultLanguage = $languageManager->getDefaultLanguage();
+
+  $configFactory = \Drupal::configFactory();
+  $config = $configFactory->getEditable('core.entity_view_display.comment.iq_blog_post_comment_answer.default', $defaultLanguage);
   $content = $config->get('content');
 
   $weight = max(array_map(function ($item) {
