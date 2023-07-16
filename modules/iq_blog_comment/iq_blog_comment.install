@@ -19,9 +19,7 @@ function _add_comment_to_node_display() {
   $config = \Drupal::configFactory()->getEditable('core.entity_view_display.node.iq_blog_post.default');
   $content = $config->get('content');
 
-  $weight = max(array_map(function ($item) {
-    return $item['weight'];
-  }, $content));
+  $weight = max(array_map(fn($item) => $item['weight'], $content));
 
   $commentFieldSettings = [
     'type' => 'comment_default',

@@ -6,11 +6,11 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Flood\DatabaseBackend;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\Core\Flood\DatabaseBackend;
 
 /**
  * Class LikeDislikeController hanldes liking via Ajax.
@@ -98,7 +98,7 @@ class LikeDislikeController extends ControllerBase {
     $response = new AjaxResponse();
 
     // Decode the url data.
-    $dataDecoded = json_decode(base64_decode($data), NULL, 512, JSON_THROW_ON_ERROR);
+    $dataDecoded = json_decode(base64_decode((string) $data), NULL, 512, JSON_THROW_ON_ERROR);
 
     // Load the entity content.
     $entity = $this->entityTypeManager

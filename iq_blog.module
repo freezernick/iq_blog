@@ -5,8 +5,8 @@
  * Contains iq_blog.module.
  */
 
-use Drupal\node\NodeInterface;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_theme().
@@ -55,7 +55,7 @@ function iq_blog_page_attachments_alter(array &$page) {
           '#tag' => 'meta',
           '#attributes' => [
             "property" => "og:description",
-            "content" => trim(preg_replace('/\s\s+/', ' ', strip_tags($node->field_iq_lead->value))),
+            "content" => trim(preg_replace('/\s\s+/', ' ', strip_tags((string) $node->field_iq_lead->value))),
           ],
         ],
         'og:description',
