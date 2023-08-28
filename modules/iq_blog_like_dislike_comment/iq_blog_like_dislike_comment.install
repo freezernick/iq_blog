@@ -16,12 +16,19 @@ function iq_blog_like_dislike_comment_install() {
  * Set config for iq_blog_post_comment comment display.
  */
 function _add_like_dislike_to_comment_display() {
-  $config = \Drupal::configFactory()->getEditable('core.entity_view_display.comment.iq_blog_post_comment.default');
+  $languageManager = \Drupal::languageManager();
+  $defaultLanguage = $languageManager->getDefaultLanguage();
+
+  $configFactory = \Drupal::configFactory();
+  $config = $configFactory->getEditable('core.entity_view_display.comment.iq_blog_post_comment.default', $defaultLanguage);
   $content = $config->get('content');
 
-  $weight = max(array_map(function ($item) {
-    return $item['weight'];
-  }, $content));
+  $weight = 0;
+  if (count($content)) {
+    $weight = max(array_map(function ($item) {
+      return $item['weight'];
+    }, $content));
+  }
   $weight++;
 
   if (array_key_exists('field_iq_blog_comment', $content)) {

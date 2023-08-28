@@ -2,9 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.iq_blog_post_comment.default
     - field.field.node.iq_blog_post.body
-    - field.field.node.iq_blog_post.field_iq_blog_comment
     - field.field.node.iq_blog_post.field_iq_date_edited
     - field.field.node.iq_blog_post.field_iq_highlight
     - field.field.node.iq_blog_post.field_iq_image
@@ -16,23 +14,13 @@ dependencies:
     - field.field.node.iq_blog_post.field_yoast_seo
     - node.type.iq_blog_post
   module:
-    - comment
     - pagedesigner
     - user
 id: node.iq_blog_post.default
 targetEntityType: node
 bundle: iq_blog_post
 mode: default
-content:
-  field_iq_blog_comment:
-    type: comment_default
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
+content: {  }
 hidden:
   body: true
   field_pagedesigner_content: true
