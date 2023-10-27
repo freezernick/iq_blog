@@ -27,16 +27,6 @@ targetEntityType: node
 bundle: iq_blog_post
 mode: default
 content:
-  body:
-    weight: 11
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
-    type: pagedesigner_yoast_seo_body_widget
-    region: content
   field_iq_date_edited:
     weight: 2
     settings: {  }
@@ -155,3 +145,4 @@ hidden:
   status: true
   sticky: true
   url_redirects: true
+  body: true

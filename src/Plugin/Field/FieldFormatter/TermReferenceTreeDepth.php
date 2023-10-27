@@ -27,7 +27,7 @@ class TermReferenceTreeDepth extends TermReferenceTree {
     $data = [];
     foreach ($items->getValue() as $item) {
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($item['target_id']);
-      if (!$term->parent->target_id) {
+      if ($term && !$term->parent->target_id) {
         $data[] = $item;
       }
     }
