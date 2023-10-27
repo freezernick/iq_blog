@@ -23,7 +23,10 @@ function _add_like_dislike_to_comment_answer_display() {
   $config = $configFactory->getEditable('core.entity_view_display.comment.iq_blog_post_comment_answer.default', $defaultLanguage);
   $content = $config->get('content');
 
-  $weight = max(array_map(fn($item) => $item['weight'], $content));
+  $weight = 0;
+  if (count($content)) {
+    $weight = max(array_map(fn($item) => $item['weight'], $content));
+  }
   $weight++;
 
   if (array_key_exists('field_iq_blog_comment', $content)) {
