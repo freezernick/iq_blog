@@ -26,7 +26,6 @@ permissions:
   - 'delete media'
   - 'delete own iq_blog_post content'
   - 'edit any iq_blog_post content'
-  - 'edit any news content'
   - 'edit own iq_blog_post content'
   - 'edit pagedesigner element entities'
   - 'edit pagedesigner styles'

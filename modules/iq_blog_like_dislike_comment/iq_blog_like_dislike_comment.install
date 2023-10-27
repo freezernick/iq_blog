@@ -25,9 +25,7 @@ function _add_like_dislike_to_comment_display() {
 
   $weight = 0;
   if (count($content)) {
-    $weight = max(array_map(function ($item) {
-      return $item['weight'];
-    }, $content));
+    $weight = max(array_map(fn($item) => $item['weight'], $content));
   }
   $weight++;
 
