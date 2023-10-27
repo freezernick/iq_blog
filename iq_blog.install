@@ -6,6 +6,18 @@
  */
 
 /**
+ * Add news edit permission to "author" role.
+ */
+function iq_blog_install() {
+  if (\Drupal::moduleHandler()->moduleExists('iq_news')) {
+    /** @var \Drupal\user\Entity\Role $role */
+    $role = reset(\Drupal::entityTypeManager()->getStorage('user_role')->loadByProperties(['id' => 'iq_blog_author']));
+    $role->grantPermission("edit any iq_news_article content");
+    $role->save();
+  }
+}
+
+/**
  * Install iq_blog_scheduling submodule if scheduling is set up for blog posts.
  */
 function iq_blog_update_8001() {
