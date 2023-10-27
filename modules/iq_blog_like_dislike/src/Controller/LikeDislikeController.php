@@ -2,6 +2,7 @@
 
 namespace Drupal\iq_blog_like_dislike\Controller;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Controller\ControllerBase;
@@ -98,7 +99,7 @@ class LikeDislikeController extends ControllerBase {
     $response = new AjaxResponse();
 
     // Decode the url data.
-    $dataDecoded = json_decode(base64_decode((string) $data), NULL, 512, JSON_THROW_ON_ERROR);
+    $dataDecoded = Json::decode(base64_decode((string) $data));
 
     // Load the entity content.
     $entity = $this->entityTypeManager
