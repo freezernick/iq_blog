@@ -1188,16 +1188,16 @@ display:
             group_items: {  }
           plugin_id: datetime
         nid:
-          id: nid
-          table: node
-          field: nid
+          id: pba_entity_filter
+          table: node_field_data
+          field: pba_entity_filter
           relationship: none
           group_type: group
           admin_label: ''
           operator: in
           value: {  }
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: nid_op
             label: 'Blog Artikel'
@@ -1231,8 +1231,14 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          plugin_id: nid_views_filter
+          entity_type: node          
+          entity_field: nid
+          plugin_id: pba_entity_filter
+          pagedesigner_trait_type: multiplecheckbox
+          pagedesigner_multiselect: 1
+          pagedesigner_required: true
+          pagedesigner_bundles:
+            iq_blog_post: iq_blog_post
       defaults:
         filters: false
         filter_groups: false
