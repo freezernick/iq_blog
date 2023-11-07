@@ -1195,7 +1195,7 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value: {  }
+          value: ''
           group: 1
           exposed: false
           expose:
