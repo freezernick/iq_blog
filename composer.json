@@ -22,7 +22,7 @@
   "extra": {
     "patches": {
       "drupal/publication_date": {
-        "[https://dgo.to/3210972]: Handle scheduler": "https://www.drupal.org/files/issues/2023-11-23/publication_date-scheduler_handler-3210972-9.patch"
+        "[https://dgo.to/3210972]: Handle scheduler": "https://www.drupal.org/files/issues/2023-11-23/publication_date-scheduler_handler-3210972-10.patch"
       }
     }
   }
