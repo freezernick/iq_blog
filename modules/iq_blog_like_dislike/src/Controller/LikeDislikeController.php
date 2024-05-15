@@ -99,7 +99,7 @@ class LikeDislikeController extends ControllerBase {
     $response = new AjaxResponse();
 
     // Decode the url data.
-    $dataDecoded = Json::decode(base64_decode((string) $data));
+    $dataDecoded = json_decode(base64_decode((string) $data));
 
     // Load the entity content.
     $entity = $this->entityTypeManager
