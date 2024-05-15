@@ -50,5 +50,3 @@ function _add_like_dislike_to_node_display() {
   $config->set('content', $content);
   $config->save();
 }
-
-_add_like_dislike_to_node_display();
