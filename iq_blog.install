@@ -51,4 +51,3 @@ function _install_submodule() {
 function iq_blog_update_9001() {
   \Drupal::service('module_installer')->install(['scheduler_request_cron']);
 }
-
