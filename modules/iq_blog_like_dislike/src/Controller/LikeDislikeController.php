@@ -2,7 +2,6 @@
 
 namespace Drupal\iq_blog_like_dislike\Controller;
 
-use Drupal\Component\Serialization\Json;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Controller\ControllerBase;
