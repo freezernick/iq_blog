@@ -6,7 +6,7 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Flood\DatabaseBackend;
+use Drupal\Core\Flood\FloodInterface;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -50,7 +50,7 @@ class LikeDislikeController extends ControllerBase {
   /**
    * The Flood service.
    *
-   * @var \Drupal\Core\Flood\DatabaseBackend
+   * @var \Drupal\Core\Flood\FloodInterface
    */
   protected $floodService;
 
@@ -65,10 +65,10 @@ class LikeDislikeController extends ControllerBase {
    *   The current user.
    * @param \Drupal\Core\Render\RendererInterface $renderer
    *   The renderer.
-   * @param \Drupal\Core\Flood\DatabaseBackend $flood
+   * @param \Drupal\Core\Flood\FloodInterface $flood
    *   Flood service.
    */
-  public function __construct(RequestStack $request, EntityTypeManagerInterface $entity_type_manager, AccountInterface $account, RendererInterface $renderer, DatabaseBackend $flood) {
+  public function __construct(RequestStack $request, EntityTypeManagerInterface $entity_type_manager, AccountInterface $account, RendererInterface $renderer, FloodInterface $flood) {
     $this->requestStack = $request;
     $this->entityTypeManager = $entity_type_manager;
     $this->currentUser = $account;
